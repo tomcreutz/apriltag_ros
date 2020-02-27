@@ -19,6 +19,9 @@
 #   ]
 standalone_tags:
   [
+#    {id: 42, size: 0.149, name: marker_42},
+#    {id: 60, size: 0.0595, name: marker_60}
+
   ]
 # ## Tag bundle definitions
 # ### Remarks
@@ -43,4 +46,12 @@ standalone_tags:
 #   ]
 tag_bundles:
   [
+    {
+       name: 'marker_42',
+       layout:
+         [
+           {id: 42, size: 0.149},
+           {id: 60, size: 0.0595}
+         ]
+     }
   ]
