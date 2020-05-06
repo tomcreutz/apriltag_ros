@@ -50,8 +50,16 @@ tag_bundles:
        name: 'marker_42',
        layout:
          [
-           {id: 42, size: 0.149},
-           {id: 60, size: 0.0595}
+           {id: 42, size: 0.16933},
+           {id: 60, size: 0.05644}
+         ]
+     },
+     {
+       name: 'marker_25',
+       layout:
+         [
+           {id: 42, size: 0.16933},
+           {id: 25, size: 0.05644}
          ]
      }
   ]
