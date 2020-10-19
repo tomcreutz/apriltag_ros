@@ -1,3 +1,6 @@
+# Name of tag bundle. Is optional and might be empty if a standalone tag
+string name
+
 # Tag ID(s). If a standalone tag, this is a vector of size 1. If a tag bundle,
 # this is a vector containing the IDs of each tag in the bundle.
 int32[] id
