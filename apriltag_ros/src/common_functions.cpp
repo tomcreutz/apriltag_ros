@@ -364,6 +364,21 @@ AprilTagDetectionArray TagDetector::detectTags (
     tag_detection.pose = tag_pose;
     tag_detection.id.push_back(detection->id);
     tag_detection.size.push_back(tag_size);
+    for (auto img_point : standaloneTagImagePoints) {
+      geometry_msgs::Point point;
+      point.x = img_point.x;
+      point.y = img_point.y;
+      point.z = 0.;
+      tag_detection.marker_corners.image_point.push_back(point);
+    }
+    for (auto obj_point : standaloneTagObjectPoints)
+    {
+      geometry_msgs::Point point;
+      point.x = obj_point.x;
+      point.y = obj_point.y;
+      point.z = obj_point.z;
+      tag_detection.marker_corners.feature_position.push_back(point);
+    }
     tag_detection_array.detections.push_back(tag_detection);
     detection_names.push_back(standaloneDescription->frame_name());
   }
