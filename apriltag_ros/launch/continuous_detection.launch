@@ -4,10 +4,13 @@
   <arg name="camera_name" default="/magneto_cam" />
   <arg name="camera_frame" default="usb_cam_link" />
   <arg name="image_topic" default="image_raw" />
+  <arg name="publish_tag_detections_image" default="false" />
+  <arg name="settings_file" default="$(find apriltag_ros)/config/settings.yaml" />
+  <arg name="tags_file" default="$(find apriltag_ros)/config/tags.yaml" />
 
   <!-- Set parameters -->
-  <rosparam command="load" file="$(find apriltag_ros)/config/settings.yaml" ns="$(arg node_namespace)" />
-  <rosparam command="load" file="$(find apriltag_ros)/config/tags.yaml" ns="$(arg node_namespace)" />
+  <rosparam command="load" file="$(arg settings_file)" ns="$(arg node_namespace)" />
+  <rosparam command="load" file="$(arg tags_file)" ns="$(arg node_namespace)" />
   
   <node pkg="apriltag_ros" type="apriltag_ros_continuous_node" name="$(arg node_namespace)" clear_params="true" output="screen" launch-prefix="$(arg launch_prefix)" >
     <!-- Remap topics from those used in code to those on the ROS network -->
@@ -15,6 +18,6 @@
     <remap from="camera_info" to="$(arg camera_name)/camera_info" />
 
     <param name="camera_frame" type="str" value="$(arg camera_frame)" />
-    <param name="publish_tag_detections_image" type="bool" value="true" />      <!-- default: false -->
+    <param name="publish_tag_detections_image" type="bool" value="$(arg publish_tag_detections_image)" />      <!-- default: false -->
   </node>
 </launch>
