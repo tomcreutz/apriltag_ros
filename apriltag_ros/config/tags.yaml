@@ -28,6 +28,7 @@ standalone_tags:
     {id: 70, size: 0.29625, name: marker_70},
     {id: 80, size: 0.09813, name: marker_80},
     {id: 90, size: 0.03183, name: marker_90}
+  ]
 # ## Tag bundle definitions
 # ### Remarks
 #
