@@ -19,10 +19,15 @@
 #   ]
 standalone_tags:
   [
-#    {id: 42, size: 0.149, name: marker_42},
-#    {id: 60, size: 0.0595, name: marker_60}
-
-  ]
+    {id: 10, size: 0.29625, name: marker_10},
+    {id: 20, size: 0.09813, name: marker_20},
+    {id: 30, size: 0.03183, name: marker_30},
+    {id: 40, size: 0.29625, name: marker_40},
+    {id: 50, size: 0.09813, name: marker_50},
+    {id: 60, size: 0.03183, name: marker_60},
+    {id: 70, size: 0.29625, name: marker_70},
+    {id: 80, size: 0.09813, name: marker_80},
+    {id: 90, size: 0.03183, name: marker_90}
 # ## Tag bundle definitions
 # ### Remarks
 #
@@ -46,20 +51,20 @@ standalone_tags:
 #   ]
 tag_bundles:
   [
-    {
-       name: 'marker_42',
-       layout:
-         [
-           {id: 42, size: 0.16933},
-           {id: 60, size: 0.05644}
-         ]
-     },
-     {
-       name: 'marker_25',
-       layout:
-         [
-           {id: 48, size: 0.16933},
-           {id: 25, size: 0.05644}
-         ]
-     }
+    # {
+    #    name: 'marker_42',
+    #    layout:
+    #      [
+    #        {id: 42, size: 0.16933},
+    #        {id: 60, size: 0.05644}
+    #      ]
+    #  },
+    #  {
+    #    name: 'marker_25',
+    #    layout:
+    #      [
+    #        {id: 48, size: 0.16933},
+    #        {id: 25, size: 0.05644}
+    #      ]
+    #  }
   ]
