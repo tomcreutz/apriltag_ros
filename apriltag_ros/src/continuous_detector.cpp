@@ -94,10 +94,13 @@ void ContinuousDetector::imageCallback (
   // their payload values
   if (draw_tag_detections_image_)
   {
-    cv::Mat img_rgb;
-    cv::cvtColor(cv_image_->image,img_rgb,CV_GRAY2BGR);
-    cv_image_->image = img_rgb;
-    cv_image_->encoding = "bgr8";
+    if(cv_image_->encoding == "mono8")
+    {
+      cv::Mat img_rgb;
+      cv::cvtColor(cv_image_->image,img_rgb,CV_GRAY2BGR);
+      cv_image_->image = img_rgb;
+      cv_image_->encoding = "bgr8";
+    }    
     tag_detector_->drawDetections(cv_image_);
     tag_detections_image_publisher_.publish(cv_image_->toImageMsg());
   }
